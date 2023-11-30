@@ -1,12 +1,12 @@
 /**
  * @file walking.cpp
  * @author Patrik Dominik Pördi (ppordi@umd.edu)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-11-30
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 #include <random>
 #include <ros2-turtlebot/walking.hpp>
@@ -40,7 +40,7 @@ void Turtle_walking::scan_callback(
       }
     }
   }
-  
+
   if (distance <= safety_distance) {
     RCLCPP_WARN_STREAM(rclcpp::get_logger("Turtle_walking"),
                        "Houston we are getting to close!");
