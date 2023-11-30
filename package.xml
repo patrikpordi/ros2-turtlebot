@@ -3,9 +3,9 @@
 <package format="3">
   <name>ros2-turtlebot</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="ppordi@umd.edu">pordipatrik</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Turtlebot moves around like a roomba robot</description>
+  <maintainer email="ppordi@umd.edu">Patrik Pordi</maintainer>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
