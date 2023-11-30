@@ -1,3 +1,13 @@
+/**
+ * @file walking.hpp
+ * @author Patrik Dominik Pördi (ppordi@umd.edu)
+ * @brief 
+ * @version 0.1
+ * @date 2023-11-30
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #pragma once
 #include <chrono>
 #include <functional>
