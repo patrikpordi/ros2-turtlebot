@@ -13,7 +13,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 
-
+# add_library(walking_lib SHARED lib/walking.cpp)
 add_library(walking_lib lib/walking.cpp)
 target_include_directories(walking_lib PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -21,7 +21,7 @@ target_include_directories(walking_lib PUBLIC
 ament_target_dependencies(walking_lib  rclcpp std_msgs geometry_msgs sensor_msgs)
 ament_export_targets(walking_lib HAS_LIBRARY_TARGET)
 
-
+# install the include directory and the library itself
 install(
   DIRECTORY include
   DESTINATION include
@@ -35,7 +35,7 @@ install(
   INCLUDES DESTINATION include
 )
 
-
+# executable
 add_executable(walking src/main.cpp)
 target_include_directories(walking PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -44,7 +44,7 @@ target_link_libraries(walking walking_lib)
 ament_target_dependencies(walking rclcpp std_msgs geometry_msgs sensor_msgs)
 install(TARGETS walking
   DESTINATION lib/${PROJECT_NAME})
-
+# test
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
 
