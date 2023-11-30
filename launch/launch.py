@@ -67,7 +67,7 @@ def generate_launch_description():
         ),
         ExecuteProcess(
     condition=IfCondition(LaunchConfiguration('rosbag_record')),
-    cmd=['ros2', 'bag', 'record', '-o', '~/gazebo/src/ros2-turtlebot/results/walker_bag', '-a', '-x', 'depth_cam'],
+    cmd=['ros2', 'bag', 'record', '-o', '~/gazebo/src/ros2-turtlebot/results/walking_bag', '-a', '-x', 'depth_cam'],
     shell=True
 )
     ])

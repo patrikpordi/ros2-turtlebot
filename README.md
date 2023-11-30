@@ -30,10 +30,11 @@ To build the package, follow these steps:
 
 1. Clone the package into your ROS 2 workspace's `src/` directory:
 
-   ```bash
-  
+```bash
+git clone git@github.com:patrikpordi/ros2-turtlebot.git
+```
+----
 
-   ----
 To bag all the topics during launch use
 ```bash
 ros2 ros2 launch ros2-turtlebot launch.py rosbag_record:=true
@@ -43,25 +44,16 @@ Without bagging
 ```bash
 ros2 launch ros2-turtlebot launch.py
 ```
-OR
+
+
+Investigate the bag files:
 ```bash
-# To update the frequency of the talker and change the save location of the bag file
-ros2 launch cpp_pubsub talker_listener_bagger.py talker_f:=10.0 bag_file:='./src/cpp_pubsub/results/new_recording'
+ros2 bag info src/ros2-turtlebot/results/walking_bag/walking_bag_0.db3
+
+ros2 bag play src/ros2-turtlebot/results/walking_bag/walking_bag_0.db3
+
 ```
 
-This will run the talker node and bag all the topics it publishes for 15sec
-> :warning: A new bag will not be created if a file with the same name already exists
-
-To replay the bag file along with a listener node run the following command
-```bash
-# This will play the bag file recorded in the results path 
-ros2 launch cpp_pubsub talker_listener_bagger.py replay_only:='True' bag_file:='./src/cpp_pubsub/results/new_recording'
-```
-Run the unit tests by running the command 
-```bash
-colcon test --packages-select cpp_pubsub
-cat log/latest_test/cpp_pubsub/stdout_stderr.log
-```
 
 ## CppLint & CppCheck
    ```bash
@@ -79,7 +71,4 @@ cat log/latest_test/cpp_pubsub/stdout_stderr.log
 Can be found results/
    cppcheck.txt
    cpplint.txt
-   rqt_console.png
-   frames_2023-11-19_17.22.55.gv
-   frames_2023-11-19_17.22.55.pdf
-   new_recording
+   walking_bag
